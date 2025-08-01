@@ -1,0 +1,25 @@
+name: Daily Stock Data Fetch
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Every day at 12:00
+UTC
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Run script
+      run: python fetch-stock.py

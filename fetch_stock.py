@@ -1,4 +1,4 @@
-import yfinance as yf
+import yfinance as yf # Update to polygon io api
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
